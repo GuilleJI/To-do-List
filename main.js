@@ -4,6 +4,10 @@ const ITEM_TEMPLATE = document.getElementById("itemTemplate");
 const ADD_BUTTON = document.getElementById("add"); 
 // All three (items, itemTemplate, and "add" button are referenced in out JavaScript file)
 
+
+//Step 3: When the page first loads up...
+let items = getItems(); 
+
 //Step 2: fetch the existing items from local storage.
 function getItems() {
     //this function will look at local storage and get the items out if there are already
@@ -13,5 +17,5 @@ function getItems() {
     return JSON.parse(value); //<-----we need to convert that JSON string into an actual JavaScript array
 }
 
-//Once done, we call getItems functions 
-getItems(); 
+//we then console.log the items variable..
+console.log(items); 
