@@ -35,8 +35,27 @@ function addItem(){
 
     //once an item has been added, we can setitems and pass in there those items..
     setItems(items); //<-- saves new item to our local storage.
-    //next step is going to be to refresh the list once the item has been added 
+    //next step is going to be to refresh the list once the item has been added ..
     refreshList();
+}
+
+//Step 6: we now create refreshList function here, which is going to take our items list to the top, which then it is going to render that to the user..
+function refreshList() {
+    //firstly, we sort the items..
+    //TODO sort items
+    ITEMS_CONTAINER.innerHTML = ""; 
+
+    for(const item of items) {
+        const itemElement = ITEMS_TEMPLATE.content.cloneNode(true); //we're taking the template element, then we're saying get the content from div class "item". Then we're saying lets clone or make a copy of this div (<div class="item">). 
+        const descriptionInput = itemElement.querySelector(".item-description"); //item description refers to the input class "item-description" because we're cloning it the new input for the description
+        const completedInput = itemElement.querySelector(".item-completed");//same applies with the following, but this time we're refering to input class "item-completed".
+
+        descriptionInput.value = item.description; //the value of that new input field is going to be the description of that item that came from our addItem() function. So, we're going to be making this thing work properly
+        completedInput.checked = item.completed; // .checked is the boolean setter for check boxes, which will make it checked or not checked.
+
+        ITEMS_CONTAINER.append(itemElement);
+    } 
+
 }
 
 
