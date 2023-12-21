@@ -60,4 +60,7 @@ function refreshList() {
 
 
 //we then console.log the items variable..(part of step 3.)
-console.log(items); 
+// console.log(items); 
+
+//Step 7: replace console.log items variable (part of step 3) and replace it with refreshList() instead
+refreshList(); //<---this will call the refreshList function. 
