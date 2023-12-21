@@ -7,4 +7,10 @@ const ADD_BUTTON = document.getElementById("add");
 //Step 2: fetch the existing items from local storage.
 function getItems() {
     //this function will look at local storage and get the items out if there are already
+    const value = localStorage.getItem("todo-test");  //<----const value serves to get a specific value from local storage using "todo-test" as a pass, which refers to the key of the local storage key value pair (you can name it whatever you like really...)
+
+    console.log(value); 
 }
+
+//Once done, we call getItems functions 
+getItems(); 
