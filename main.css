@@ -5,3 +5,11 @@
     width: 200px; 
     margin-bottom: 10px;
 }
+
+/* Targeting the checkbox..When the checkbox is checked, we're adding the .item-description.
+The plus allows us to target a sibling in the HTML. */
+
+.item-completed:checked + .item-description {
+    background-color: rgb(208, 199, 199);
+    text-decoration: line-through; /* this is to make sure the item is definitely checked off*/
+}
