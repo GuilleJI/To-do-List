@@ -17,5 +17,13 @@ function getItems() {
     return JSON.parse(value); //<-----we need to convert that JSON string into an actual JavaScript array
 }
 
-//we then console.log the items variable..
+//Step 4: The next function to define is going to be to set the items..
+//Once the user has added an item or changed an item, we want to actually set the item back. Therefore, we essentially want to refresh what we just saved..
+function setItems(items){
+    const itemsJson = JSON.stringify(items); //<----Taking the items array and converting it back to JSON, so it can be saved against local storage.
+
+    localStorage.setItem("todo-test", itemsJson);//<----we're resetting that Json back
+}
+
+//we then console.log the items variable..(part of step 3.)
 console.log(items); 
