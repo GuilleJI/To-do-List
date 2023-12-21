@@ -13,3 +13,12 @@ The plus allows us to target a sibling in the HTML. */
     background-color: rgb(208, 199, 199);
     text-decoration: line-through; /* this is to make sure the item is definitely checked off*/
 }
+
+/* For the button */
+#add { 
+    padding: 8px 14px;
+    font-weight: bold;
+    color:beige; 
+    background: #009578;
+    cursor: pointer;
+}
