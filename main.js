@@ -11,7 +11,7 @@ let items = getItems();
 //Step 2: fetch the existing items from local storage.
 function getItems() {
     //this function will look at local storage and get the items out if there are already
-    const value = localStorage.getItem("todo-test") || "[]";  //<----const value serves to get a specific value from local storage using "todo-test" as a pass, which refers to the key of the local storage key value pair (you can name it whatever you like really...)
+    const value = localStorage.getItem("todo") || "[]";  //<----const value serves to get a specific value from local storage using "todo-test" as a pass, which refers to the key of the local storage key value pair (you can name it whatever you like really...)
                                                              //<---However, because we have no content from local storage after passing "todo-list" we can use solve this by adding an empty array by using  "||" followed by "[]". Great fallback to default in case it is first time user is opening up the page...
 
     return JSON.parse(value); //<-----we need to convert that JSON string into an actual JavaScript array
@@ -38,6 +38,15 @@ function addItem(){
     //next step is going to be to refresh the list once the item has been added ..
     refreshList();
 }
+
+//Step 9: We now create a new function to save our input data from the list
+
+function updateItem(item, key, value){ //<--it'll take through an item, as well as the key which to update, and the value we wish to set that key to. 
+    item[key] = value; //sets that key on that item to be the value that you pass in. 
+    setItems(items); //once thats been set in, we're gonna say 'setItems' then pass through items 
+    refreshList(); //<--- After that we simply refresh the list 
+}
+
 
 //Step 6: we now create refreshList function here, which is going to take our items list to the top, which then it is going to render that to the user..
 function refreshList() {
