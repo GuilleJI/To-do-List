@@ -25,5 +25,20 @@ function setItems(items){
     localStorage.setItem("todo-test", itemsJson);//<----we're resetting that Json back
 }
 
+//Step 5: We can now define the logic for adding a new item
+
+function addItem(){ 
+    items.unshift({ //<---unshift means to add a new element at the start of an array..
+        description: "",
+        completed: false //<----completed status of false (that is our default)
+    });
+
+    //once an item has been added, we can setitems and pass in there those items..
+    setItems(items); //<-- saves new item to our local storage.
+    //next step is going to be to refresh the list once the item has been added 
+    refreshList();
+}
+
+
 //we then console.log the items variable..(part of step 3.)
 console.log(items); 
