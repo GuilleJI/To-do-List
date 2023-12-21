@@ -46,7 +46,7 @@ function refreshList() {
     ITEMS_CONTAINER.innerHTML = ""; 
 
     for(const item of items) {
-        const itemElement = ITEMS_TEMPLATE.content.cloneNode(true); //we're taking the template element, then we're saying get the content from div class "item". Then we're saying lets clone or make a copy of this div (<div class="item">). 
+        const itemElement = ITEM_TEMPLATE.content.cloneNode(true); //we're taking the template element, then we're saying get the content from div class "item". Then we're saying lets clone or make a copy of this div (<div class="item">). 
         const descriptionInput = itemElement.querySelector(".item-description"); //item description refers to the input class "item-description" because we're cloning it the new input for the description
         const completedInput = itemElement.querySelector(".item-completed");//same applies with the following, but this time we're refering to input class "item-completed".
 
@@ -61,6 +61,12 @@ function refreshList() {
 
 //we then console.log the items variable..(part of step 3.)
 // console.log(items); 
+
+//Step 8: we're going to make the add button work
+ADD_BUTTON.addEventListener("click", () => {
+
+    addItem(); //<---We then call the addItem() function
+});
 
 //Step 7: replace console.log items variable (part of step 3) and replace it with refreshList() instead
 refreshList(); //<---this will call the refreshList function. 
