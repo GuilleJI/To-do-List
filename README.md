@@ -1,0 +1,1 @@
+Building a straightforward To-Do List App with HTML, CSS, and JavaScript. This project is framework-free and serves as an excellent resource for beginners looking to grasp concepts like Local Storage and web user interface development.
