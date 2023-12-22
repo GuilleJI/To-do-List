@@ -68,6 +68,12 @@ function refreshList() {
 
         });
 
+        //Step 11: copy and do the same (similar but different at the same time):
+        completedInput.addEventListener ("change", () => { //<--- when the user changes the completed input
+            updateItem(item, "completed", completedInput.checked) //<---im going to simply say update item, Pass through here through the item, Then as a value the key its going to be completed. Finally the value for that is going to be completedInput.checked.   
+
+        });
+
         ITEMS_CONTAINER.append(itemElement);
     } 
 
