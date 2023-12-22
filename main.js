@@ -51,7 +51,24 @@ function updateItem(item, key, value){ //<--it'll take through an item, as well 
 //Step 6: we now create refreshList function here, which is going to take our items list to the top, which then it is going to render that to the user..
 function refreshList() {
     //firstly, we sort the items..
-    //TODO sort items
+    
+    //Step 11: FINAL: sorting todo items: 
+    items.sort((a, b)=>{
+        if (a.completed){
+            return 1; 
+
+        }
+
+        if(b.completed){
+            return -1;
+        }
+
+        return a.description < b.description ? -1 : 1; //<---this will sort the list alphabetically 
+    });
+
+
+
+
     ITEMS_CONTAINER.innerHTML = ""; 
 
     for(const item of items) {
