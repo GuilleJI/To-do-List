@@ -62,6 +62,12 @@ function refreshList() {
         descriptionInput.value = item.description; //the value of that new input field is going to be the description of that item that came from our addItem() function. So, we're going to be making this thing work properly
         completedInput.checked = item.completed; // .checked is the boolean setter for check boxes, which will make it checked or not checked.
 
+        //Step 10: we then hop down to our refreshList function and say: 
+        descriptionInput.addEventListener ("change", () => { //<--- when the user changes the description input
+            updateItem(item, "description", descriptionInput.value) //<---im going to simply say update item .Pass through here through the item. Then as a value the key its going to be description. Finally the value for that is going to be descriptionInput.value.   
+
+        });
+
         ITEMS_CONTAINER.append(itemElement);
     } 
 
