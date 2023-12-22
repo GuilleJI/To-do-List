@@ -66,9 +66,6 @@ function refreshList() {
         return a.description < b.description ? -1 : 1; //<---this will sort the list alphabetically 
     });
 
-
-
-
     ITEMS_CONTAINER.innerHTML = ""; 
 
     for(const item of items) {
